@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0f1c26;
+    color: #fff;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 12px 30px;
+    background: #0b1620;
+    border-radius: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            color 0.3s ease,
+            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a.active {
+    background: #f26b4f;
+    color: #fff;
+}
+
+/* =========================
+   SECTIONS (GLOBAL)
+========================= */
+
+.section {
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+/* =========================
+   HOME SECTION
+========================= */
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content {
+    text-align: center;
+}
+
+.profile-wrapper img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 0 60px rgba(242, 107, 79, 0.6);
+    margin-bottom: 30px;
+}
+
+.home-content h1 {
+    font-size: 48px;
+}
+
+.home-content h1 span {
+    color: #f26b4f;
+}
+
+.home-content h2 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.home-content p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.scroll-down {
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-down:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Arrow icon */
+.scroll-down .iconify {
+    font-size: 26px; /* icon size */
+    color: #ffffff;  /* white */
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects-section {
+    padding: 140px 80px;
+}
+
+.projects-heading {
+    max-width: 900px;
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+
+.projects-heading span {
+    color: #f26b4f;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects-section {
+    padding: 140px 80px;
+}
+
+.projects-heading {
+    max-width: 900px;
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+
+.projects-heading span {
+    color: #f26b4f;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    align-items: flex-start;
+    /* 🔑 IMPORTANT */
+}
+
+/* PROJECT CARD */
+.project-card {
+    background: #1b2430;
+    border-radius: 18px;
+    padding: 28px;
+    position: relative;
+    align-self: flex-start;
+    /* 🔑 IMPORTANT */
+}
+
+/* COLLAPSED STATE */
+.card-collapsed h3 {
+    font-size: 24px;
+}
+
+.card-collapsed p {
+    margin-top: 6px;
+    opacity: 0.85;
+}
+
+.card-collapsed span {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* VIEW DETAILS / VIEW LESS BUTTON */
+.toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 14px;
+    padding: 6px 14px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    background: transparent;              /* NO FILL */
+    border: 1px solid #D86352;             /* STROKE */
+    color: #ffffff;                        /* TEXT WHITE */
+
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.toggle-btn .arrow {
+    color: #D86352;                        /* ARROW COLOR */
+    font-size: 12px;
+}
+
+/* EXPANDED CONTENT */
+.card-expanded {
+    max-height: 0;
+    overflow: hidden;
+
+    margin-top: 0;
+    opacity: 0;
+
+    transition:
+        max-height 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.45s ease,
+        margin-top 0.45s ease;
+}
+
+.project-card.expanded .card-expanded {
+    max-height: 420px;
+    margin-top: 18px;
+    opacity: 1;
+}
+
+.project-card.expanded .card-expanded {
+    display: block;
+}
+
+/* VIEW LESS HIDE / SHOW LOGIC */
+.project-card .view-less {
+    display: none;
+}
+
+.project-card.expanded .view-details {
+    display: none;
+}
+
+.project-card.expanded .view-less {
+    display: inline-flex;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   ABOUT SECTION (FINAL & SAFE)
+========================= */
+
+.about-section {
+    padding: 140px 120px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Intro */
+
+.about-intro h1 {
+    font-size: 48px;
+    line-height: 1.25;
+    max-width: 900px;
+    display: block;
+}
+
+.about-intro h1 span {
+    color: #f26b4f;
+}
+
+.about-intro p {
+    margin-top: 16px;
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+.resume-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 10px 22px;
+    border: 1px solid #f26b4f;
+    border-radius: 24px;
+    color: #f26b4f;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Background fill on hover */
+.resume-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f26b4f;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;
+}
+
+.resume-btn:hover {
+    color: #ffffff;
+}
+
+.resume-btn:hover::before {
+    transform: scaleX(1);
+}
+/* Blocks */
+
+.about-block {
+    margin-top: 90px;
+}
+
+.about-block h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+/* Skills */
+
+.skill-strip {
+    background: #192F41;
+    padding: 16px 50px 16px 24px;
+    /* right side 50px gap */
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* 👈 MAIN MAGIC */
+}
+
+.skill-strip strong {
+    min-width: 120px;
+    flex-shrink: 0;
+    /* 👈 ADD THIS LINE */
+}
+
+.skill-strip span {
+    font-size: 15px;
+    color: #b8c6d1;
+    white-space: nowrap;
+}
+
+/* Education */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.edu-card {
+    background: #192F41;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+.edu-card small {
+    opacity: 0.7;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+    .about-section {
+        padding: 120px 40px;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.contact-buttons {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 220px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 26px;
+    border-radius: 40px;
+    border: 1.5px solid #f26b4f;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+/* ICON */
+.contact-btn img {
+    width: 20px;
+}
+
+/* HOVER EFFECT */
+.contact-btn:hover {
+    background: #f26b4f;
+    box-shadow: 0 0 25px rgba(242, 107, 79, 0.5);
+    transform: translateY(-2px);
+}
+
+/* OPTIONAL: platform colors on hover */
+.contact-btn.linkedin:hover {
+    background: #ea4335;
+    border-color: #ffffff;
+}
+
+.contact-btn.whatsapp:hover {
+    background: #ea4335;
+    border-color: #ffffff;
+}
+
+.contact-btn.gmail:hover {
+    background: #ea4335;
+    border-color: #ffffff;
+
+
+    }
+.contact-section {
+    flex-direction: column;
+    text-align: center;
+}
+
+.contact-intro h1 {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.contact-intro p {
+    font-size: 18px;
+    opacity: 0.7;
+}
+.contact-btn.gmail i {
+    color: #f9c846;
+    /* Gmail red */
+}
+
+.contact-btn.linkedin i {
+    color: #0080ff;
+    /* LinkedIn blue */
+}
+
+.contact-btn.whatsapp i {
+    color: #25d366;
+    /* WhatsApp green */
+}
