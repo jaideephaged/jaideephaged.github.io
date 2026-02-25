@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Loan Management System Case Study</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="icon" type="image/png" href="Assets/Images/favicon1.png">
+
+        <style>
+            :root {
+                --bg: #F5F5F5;
+                --text: #111;
+                --muted: #666;
+                --blue: #356AE6;
+                --radius: 12px;
+                --s1: 8px;
+                --s2: 16px;
+                --s3: 24px;
+                --s4: 32px;
+                --s5: 40px;
+                --s6: 48px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.6;
+            }
+
+            img {
+                width: 100%;
+                display: block;
+            }
+
+            section {
+                max-width: 1200px;
+                margin: auto;
+                padding: var(--s5) var(--s4);
+            }
+
+            h1 {
+                font-size: 48px;
+                font-weight: 600;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: var(--s3);
+            }
+
+            h3 {
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            p {
+                color: var(--muted);
+                font-size: 15px;
+            }
+
+            .hero img {
+                border-radius: var(--radius);
+            }
+
+            /* Header */
+            .project-header {
+                margin-top: var(--s4);
+            }
+
+            .subtitle {
+                margin-top: var(--s1);
+                color: #444;
+            }
+
+            .nav-buttons {
+                display: flex;
+                gap: var(--s2);
+                flex-wrap: wrap;
+                margin-top: var(--s3);
+            }
+
+            .nav-buttons a {
+                background: var(--blue);
+                color: #fff;
+                padding: 10px 18px;
+                border-radius: 6px;
+                font-size: 14px;
+                text-decoration: none;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            }
+
+            .meta-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: var(--s4);
+                margin-top: var(--s5);
+            }
+
+            .meta-item span {
+                display: block;
+                font-size: 13px;
+                color: #777;
+                margin-bottom: 4px;
+            }
+
+            .meta-item strong {
+                font-size: 16px;
+            }
+
+            /* Highlight */
+            .highlight {
+                background: #EDEDED;
+                border-radius: var(--radius);
+                padding: var(--s4);
+                margin-top: var(--s5);
+            }
+
+            /* Split */
+            .split {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--s4);
+                margin-top: var(--s5);
+                align-items: start;
+            }
+
+            .split ul {
+                margin-top: var(--s2);
+                padding-left: 18px;
+            }
+
+            .split li {
+                margin-bottom: 6px;
+                font-size: 15px;
+            }
+
+            /* IA */
+            .ia {
+                margin-top: var(--s5);
+                background: #EDEDED;
+                padding: var(--s4);
+                border-radius: var(--radius);
+                font-family: monospace;
+                white-space: pre-line;
+            }
+
+            /* Media */
+            .media img {
+                margin-top: var(--s3);
+                border-radius: var(--radius);
+            }
+
+            /* Decision Cards */
+            .decision-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: var(--s3);
+                margin-top: var(--s3);
+            }
+
+            .decision-card {
+                background: #EAEAEA;
+                padding: var(--s3);
+                border-radius: 10px;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+            }
+
+            ul {
+                padding-left: 18px;
+                margin-top: var(--s2);
+            }
+
+            li {
+                margin-bottom: 6px;
+            }
+
+            @media(max-width:768px) {
+                h1 {
+                    font-size: 34px;
+                }
+
+                .split {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .mockup-grid {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.mockup-grid img {
+  width: 280px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+        </style>
+    </head>
+
+    <body>
+
+        <!-- HERO -->
+        <section class="hero">
+            <img src="Assets/Fintech/fintech mockup1.png"
+                alt="Finance management system dashboard showing active loans, risk indicators and analytics overview">
+        </section>
+
+        <!-- HEADER -->
+        <section class="project-header">
+
+            <h1>Loan Management System</h1>
+            <p class="subtitle">Simplifying Loan Tracking for Small Local Lenders</p>
+
+            <div class="nav-buttons">
+                <a href="#problem">Problem</a>
+                <a href="#research">Research</a>
+                <a href="#flow">User Flow</a>
+                <a href="#wireframes">Wireframes</a>
+                <a href="#high-ui">High-Fidelity UI</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#learned">Learnings</a>
+            </div>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>Platform</span>
+                    <strong>Mobile App + Web App</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Role</span>
+                    <strong>Solo UI/UX Designer</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Duration</span>
+                    <strong>4 Weeks</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Category</span>
+                    <strong>Financial Utility</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Users</span>
+                    <strong>Local Lenders</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Type</span>
+                    <strong>Real Project</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- WHY -->
+        <section class="highlight">
+            <h2>Why I Worked on This</h2>
+            <p>
+                A local money lender was maintaining loan records using physical notebooks, Excel sheets, and manual
+                calculations.
+                <br><br>
+                This caused confusion in tracking repayments, manual interest miscalculations, difficulty identifying
+                overdue payments, and no centralized system.
+                <br><br>
+                The goal was to create a structured digital system that automates calculations and simplifies tracking.
+            </p>
+        </section>
+
+        <!-- PROBLEM -->
+        <section id="problem" class="split">
+
+            <div>
+                <h2>The Problem</h2>
+                <p>Small local lenders lack an organized and automated system to manage loans.</p>
+
+                <h3 style="margin-top:24px;">Core Issues</h3>
+                <ul>
+                    <li>Manual record keeping</li>
+                    <li>Frequent calculation errors</li>
+                    <li>No real-time due tracking</li>
+                    <li>No risk visibility</li>
+                    <li>Difficult borrower history access</li>
+                </ul>
+
+                <p style="margin-top:16px;">
+                    The lender needed a system that reduces manual effort and prevents financial mistakes.
+                </p>
+            </div>
+
+            <div>
+                <img src="Assets/Fintech/Bookkeeping.png"
+                    alt="Illustration representing manual financial record keeping and calculation errors">
+            </div>
+
+        </section>
+
+        <!-- RESEARCH -->
+        <section id="research" class="highlight">
+            <h2>Research & Validation</h2>
+            <p>
+                I directly spoke with the lender to understand how he tracks loans, where mistakes happen, how interest
+                is calculated, and what information he checks daily.
+            </p>
+            <ul>
+                <li>Recalculating interest repeatedly</li>
+                <li>Forgetting due dates</li>
+                <li>Not knowing total pending amount instantly</li>
+            </ul>
+        </section>
+
+        <!-- DESIGN DIRECTION -->
+        <section class="highlight">
+            <h2>Design Direction</h2>
+            <ul>
+                <li>Automation over manual entry</li>
+                <li>Simple loan creation flow</li>
+                <li>Smart calculation engine</li>
+                <li>Clear financial visibility</li>
+                <li>Risk-based visual indicators</li>
+            </ul>
+            <p style="margin-top:16px;">
+                Goal: Make loan tracking effortless and error-free.
+            </p>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="highlight">
+            <h2>Key Features</h2>
+
+            <h3>Dual Loan Types</h3>
+            <ul>
+                <li>Smart Interest Plan (Bank-style calculation)</li>
+                <li>Fixed Return Plan (Fixed periodic return model)</li>
+            </ul>
+
+            <h3 style="margin-top:24px;">Smart Loan Creation</h3>
+            <ul>
+                <li>Auto total payable calculation</li>
+                <li>Next due date generation</li>
+                <li>EMI breakdown</li>
+                <li>Pending balance tracking</li>
+            </ul>
+
+            <h3 style="margin-top:24px;">Automation Engine</h3>
+            <ul>
+                <li>Automatic interest calculation</li>
+                <li>Late fee auto-calculation</li>
+                <li>Overdue alerts</li>
+                <li>Dynamic payment updates</li>
+            </ul>
+
+            <h3 style="margin-top:24px;">Risk & Analytics Dashboard</h3>
+            <ul>
+                <li>Color-coded risk levels</li>
+                <li>Total active loan summary</li>
+                <li>Overdue loan count</li>
+                <li>Revenue overview</li>
+                <li>Payment trend visualization</li>
+            </ul>
+        </section>
+
+        <!-- USER FLOW -->
+        <section id="flow" class="media">
+            <h2>User Flow</h2>
+            <img src="Assets/Fintech/user flow.png" alt="Loan creation flow from borrower addition to tracking payments">
+            <p style="margin-top:24px;text-align:center;font-weight:500;">
+                The flow was designed to minimize steps while ensuring complete financial accuracy.
+            </p>
+        </section>
+
+        <!-- INFORMATION ARCHITECTURE -->
+        <section class="ia">
+            <h2 style="font-family:'Poppins',sans-serif;margin-bottom:24px;">Information Architecture</h2>
+            Dashboard
+            ├── Active Loans
+            ├── Overdue Loans
+            ├── Borrowers
+            ├── Analytics
+            └── Settings
+
+            Loan Detail
+            ├── Payment History
+            ├── Upcoming Due
+            ├── Penalties
+            └── Loan Summary
+        </section>
+
+        <!-- WIREFRAMES -->
+        <section id="wireframes" class="media">
+            <h2>Wireframes</h2>
+            <img src="Assets/Fintech/fintech wireframes1.png" alt="Low fidelity wireframes of loan dashboard and loan detail pages">
+        </section>
+
+        <!-- HIGH FIDELITY -->
+        <section id="high-ui" class="media">
+            <h2>High-Fidelity UI</h2>
+            <section class="hero">
+                <div class="mockup-grid">
+                    <img src="Assets/Fintech/Landing.png">
+                    <img src="Assets/Fintech/My_loans.png">
+                    <img src="Assets/Fintech/chit_1.png">
+                    <img src="Assets/Fintech/Repoarts.png">
+                </div>
+            </section>
+        </section>
+
+        <!-- TESTING -->
+        <section id="analytics" class="highlight">
+            <h2>Testing & Feedback</h2>
+            <ul>
+                <li>All manual calculations eliminated</li>
+                <li>Easier due tracking</li>
+                <li>Better loan visibility</li>
+                <li>Reduced confusion</li>
+            </ul>
+            <p style="margin-top:16px;">
+                The lender described the tool as highly useful and suggested future advanced feature expansion.
+            </p>
+        </section>
+
+        <!-- CONSTRAINTS -->
+        <section class="highlight">
+            <h2>Constraints</h2>
+            <ul>
+                <li>Designed for non-technical user</li>
+                <li>Financial data accuracy critical</li>
+                <li>Limited 4-week timeline</li>
+                <li>Solo designer</li>
+            </ul>
+        </section>
+
+        <!-- LEARNINGS -->
+        <section id="learned">
+            <h2>What I Learned</h2>
+            <ul>
+                <li>Financial UX requires extreme clarity</li>
+                <li>Automation builds trust</li>
+                <li>Color coding improves risk awareness</li>
+                <li>Small businesses benefit from simple digital tools</li>
+            </ul>
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="highlight">
+            <h2>Interview Summary</h2>
+            <p>
+                This project is a financial loan management system designed for small local lenders, automating interest
+                calculation, due tracking, and risk monitoring to eliminate manual errors and improve financial clarity.
+            </p>
+        </section>
+
+    </body>
+
+</html>

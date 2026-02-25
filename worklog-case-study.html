@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Work Log Management System Case Study</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="icon" type="image/png" href="Assets/Images/favicon1.png">
+
+        <style>
+            :root {
+                --bg: #F5F5F5;
+                --text: #111;
+                --muted: #666;
+                --blue: #356AE6;
+                --radius: 12px;
+                --s1: 8px;
+                --s2: 16px;
+                --s3: 24px;
+                --s4: 32px;
+                --s5: 40px;
+                --s6: 48px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.6;
+            }
+
+            img {
+                width: 100%;
+                display: block;
+            }
+
+            section {
+                max-width: 1100px;
+                margin: auto;
+                padding: var(--s5) var(--s4);
+            }
+
+            h1 {
+                font-size: 46px;
+                font-weight: 600;
+            }
+
+            h2 {
+                font-size: 26px;
+                margin-bottom: var(--s3);
+            }
+
+            h3 {
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            p {
+                color: var(--muted);
+                font-size: 15px;
+            }
+
+            .hero img {
+                border-radius: var(--radius);
+            }
+
+            /* Header */
+            .project-header {
+                margin-top: var(--s4);
+            }
+
+            .subtitle {
+                margin-top: var(--s1);
+                color: #444;
+            }
+
+            .meta-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: var(--s4);
+                margin-top: var(--s5);
+            }
+
+            .meta-item span {
+                display: block;
+                font-size: 13px;
+                color: #777;
+                margin-bottom: 4px;
+            }
+
+            .meta-item strong {
+                font-size: 15px;
+            }
+
+            /* Highlight Sections */
+            .highlight {
+                background: #EDEDED;
+                border-radius: var(--radius);
+                padding: var(--s4);
+                margin-top: var(--s5);
+            }
+
+            /* Split Layout */
+            .split {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--s4);
+                margin-top: var(--s5);
+                align-items: start;
+            }
+
+            .split ul {
+                margin-top: var(--s2);
+                padding-left: 18px;
+            }
+
+            .split li {
+                margin-bottom: 6px;
+                font-size: 15px;
+            }
+
+            /* IA */
+            .ia {
+                margin-top: var(--s5);
+                background: #EDEDED;
+                padding: var(--s4);
+                border-radius: var(--radius);
+                font-family: monospace;
+                white-space: pre-line;
+            }
+
+            /* Media */
+            .media img {
+                margin-top: var(--s3);
+                border-radius: var(--radius);
+            }
+
+            /* Decision Cards */
+            .decision-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: var(--s3);
+                margin-top: var(--s3);
+            }
+
+            .decision-card {
+                background: #EAEAEA;
+                padding: var(--s3);
+                border-radius: 10px;
+            }
+
+            ul {
+                padding-left: 18px;
+                margin-top: var(--s2);
+            }
+
+            li {
+                margin-bottom: 6px;
+            }
+
+            @media(max-width:768px) {
+                h1 {
+                    font-size: 32px;
+                }
+
+                .split {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .mockup-grid {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.mockup-grid img {
+  width: 280px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+        </style>
+    </head>
+
+    <body>
+
+        <!-- HERO -->
+        <section class="hero">
+            <img src="Assets/Task/task mockup1.png"
+                alt="Dashboard interface of work log management system showing daily entries and calendar overview">
+        </section>
+
+        <!-- HEADER -->
+        <section class="project-header">
+
+            <h1>Work Log Management System</h1>
+            <p class="subtitle">Streamlining Daily Work Reporting for Internal Teams</p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>Platform</span>
+                    <strong>Web Application</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Role</span>
+                    <strong>Solo UI/UX Designer</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Duration</span>
+                    <strong>ADD DURATION</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Type</span>
+                    <strong>Internal Productivity Tool</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Users</span>
+                    <strong>Company Employees</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>Real Project</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PROBLEM -->
+        <section class="highlight">
+            <h2>The Problem</h2>
+
+            <p>
+                Employees were reporting daily work through informal messages, manual tracking, unstructured notes, and
+                verbal updates.
+            </p>
+
+            <ul>
+                <li>Lack of clarity</li>
+                <li>Inconsistent reporting format</li>
+                <li>Difficulty tracking time spent</li>
+                <li>No centralized historical record</li>
+            </ul>
+
+            <p style="margin-top:16px;">
+                The company needed a structured system to standardize daily reporting.
+            </p>
+        </section>
+
+        <!-- GOAL -->
+        <section class="highlight">
+            <h2>Goal</h2>
+            <ul>
+                <li>Allow employees to log work by time blocks</li>
+                <li>Maintain structured records for managers</li>
+                <li>Enable past activity tracking</li>
+                <li>Display important company dates</li>
+            </ul>
+
+            <p style="margin-top:16px;">
+                The focus was simplicity and clarity.
+            </p>
+        </section>
+
+        <!-- KEY FEATURES -->
+        <section>
+            <h2>Key Features</h2>
+
+            <h3>1 Time-Based Work Logging</h3>
+            <ul>
+                <li>Select “From” time</li>
+                <li>Select “To” time</li>
+                <li>Enter work description</li>
+                <li>Multiple entries per day</li>
+            </ul>
+
+            <h3 style="margin-top:24px;">2 Edit Restrictions</h3>
+            <ul>
+                <li>Entries editable only for today's date</li>
+                <li>Past entries are view-only</li>
+            </ul>
+
+            <h3 style="margin-top:24px;">3 Personal + Company Calendar</h3>
+            <ul>
+                <li>Company week offs</li>
+                <li>Public holidays</li>
+                <li>Important company events</li>
+                <li>Personal deadlines</li>
+                <li>Meeting reminders</li>
+                <li>Leave marking</li>
+            </ul>
+        </section>
+
+        <!-- USER FLOW -->
+        <section class="media">
+            <h2>User Flow</h2>
+            <img src="Assets/Task/Frame 2.png"
+                alt="Flow diagram showing daily work logging process from login to saving entry">
+        </section>
+
+        <!-- INFORMATION ARCHITECTURE -->
+        <section class="ia">
+            <h2 style="font-family:'Poppins',sans-serif;margin-bottom:24px;">Information Architecture</h2>
+            Dashboard
+            ├── Today’s Log
+            ├── Previous Logs (View Only)
+            ├── Calendar
+            └── Settings
+
+            Calendar
+            ├── Company Events
+            ├── Holidays
+            └── Personal Marked Dates
+        </section>
+
+        <!-- WIREFRAMES -->
+        <section class="media">
+            <h2>Wireframes</h2>
+            <img src="Assets/Task/task wireframes.png"
+                alt="Low fidelity wireframes of work log dashboard and time entry form">
+        </section>
+
+        <!-- HIGH FIDELITY -->
+        <section class="hero">
+            <div class="mockup-grid">
+                <img src="Assets/Task/Login.png">
+                <img src="Assets/Task/Task_bord.png">
+                <img src="Assets/Task/Calender View.png">
+                <img src="Assets/Task/Settings.png">
+            </div>
+        </section>
+
+        <!-- DESIGN DECISIONS -->
+        <section>
+            <h2>Design Decisions</h2>
+
+            <div class="decision-grid">
+                <div class="decision-card">
+                    <strong>Minimal Interface</strong>
+                    <p>Distraction-free layout for daily usage.</p>
+                </div>
+
+                <div class="decision-card">
+                    <strong>Clear Time Input</strong>
+                    <p>Side-by-side time fields reduce confusion.</p>
+                </div>
+
+                <div class="decision-card">
+                    <strong>Read-Only Past Data</strong>
+                    <p>Maintains data integrity and reliability.</p>
+                </div>
+
+                <div class="decision-card">
+                    <strong>Visual Calendar Markers</strong>
+                    <p>Different indicators for company and personal events.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section class="highlight">
+            <h2>Impact</h2>
+            <ul>
+                <li>Standardized daily reporting</li>
+                <li>Reduced ambiguity in updates</li>
+                <li>Clear time tracking per employee</li>
+                <li>Centralized visibility of company dates</li>
+            </ul>
+        </section>
+
+        <!-- CONSTRAINTS -->
+        <section class="highlight">
+            <h2>Constraints</h2>
+            <ul>
+                <li>Internal use only</li>
+                <li>Designed for non-technical employees</li>
+                <li>No complex analytics required</li>
+                <li>Usability prioritized over visual styling</li>
+            </ul>
+        </section>
+
+        <!-- LEARNINGS -->
+        <section>
+            <h2>What I Learned</h2>
+            <ul>
+                <li>Internal tools require clarity over creativity</li>
+                <li>Restricting edits improves data trust</li>
+                <li>Structured logging improves accountability</li>
+                <li>Simplicity increases daily adoption</li>
+            </ul>
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="highlight">
+            <h2>Interview Summary</h2>
+            <p>
+                The Work Log Management System is an internal web tool that enables employees to log time-based work
+                entries while maintaining structured historical records and a shared company calendar, improving
+                reporting clarity and accountability.
+            </p>
+        </section>
+
+    </body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>QPrep Case Study</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="icon" type="image/png" href="Assets/Images/favicon1.png">
+
+        <style>
+            :root {
+                --bg: #F5F5F5;
+                --text: #111;
+                --muted: #666;
+                --blue: #356AE6;
+                --radius: 12px;
+                --s1: 8px;
+                --s2: 16px;
+                --s3: 24px;
+                --s4: 32px;
+                --s5: 40px;
+                --s6: 48px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.6;
+            }
+
+            img {
+                width: 100%;
+                display: block;
+            }
+
+            section {
+                max-width: 1200px;
+                margin: auto;
+                padding: var(--s5) var(--s4);
+            }
+
+            h1 {
+                font-size: 48px;
+                font-weight: 600;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: var(--s3);
+            }
+
+            h3 {
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            p {
+                color: var(--muted);
+                font-size: 15px;
+            }
+
+            .hero img {
+                border-radius: var(--radius);
+            }
+
+            /* Header */
+            .project-header {
+                margin-top: var(--s4);
+            }
+
+            .subtitle {
+                margin-top: var(--s1);
+                color: #444;
+            }
+
+            .nav-buttons {
+                display: flex;
+                gap: var(--s2);
+                flex-wrap: wrap;
+                margin-top: var(--s3);
+            }
+
+            .nav-buttons a {
+                background: var(--blue);
+                color: #fff;
+                padding: 10px 18px;
+                border-radius: 6px;
+                font-size: 14px;
+                text-decoration: none;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            }
+
+            .meta-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: var(--s4);
+                margin-top: var(--s5);
+            }
+
+            .meta-item span {
+                display: block;
+                font-size: 13px;
+                color: #777;
+                margin-bottom: 4px;
+            }
+
+            .meta-item strong {
+                font-size: 16px;
+            }
+
+            /* Highlight Section */
+            .highlight-section {
+                background: #EDEDED;
+                border-radius: var(--radius);
+                padding: var(--s4);
+                margin-top: var(--s5);
+            }
+
+            /* Split Section */
+            .split-section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--s4);
+                margin-top: var(--s5);
+                align-items: start;
+            }
+
+            .split-section ul {
+                margin-top: var(--s2);
+                padding-left: 18px;
+            }
+
+            .split-section li {
+                margin-bottom: 6px;
+                font-size: 15px;
+            }
+
+            /* Flow */
+            .flow img {
+                margin-top: var(--s4);
+            }
+
+            /* IA */
+            .ia {
+                margin-top: var(--s5);
+                background: #EDEDED;
+                padding: var(--s4);
+                border-radius: var(--radius);
+                font-family: monospace;
+                white-space: pre-line;
+            }
+
+            /* Wireframes & UI */
+            .media-section img {
+                margin-top: var(--s3);
+                border-radius: var(--radius);
+            }
+
+            /* Decision Cards */
+            .decision-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: var(--s3);
+                margin-top: var(--s3);
+            }
+
+            .decision-card {
+                background: #EAEAEA;
+                padding: var(--s3);
+                border-radius: 10px;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+            }
+
+            /* Lists */
+            ul {
+                padding-left: 18px;
+                margin-top: var(--s2);
+            }
+
+            li {
+                margin-bottom: 6px;
+            }
+
+            /* Responsive */
+            @media(max-width:768px) {
+
+                h1 {
+                    font-size: 34px;
+                }
+
+                .split-section {
+                    grid-template-columns: 1fr;
+                }
+
+            }
+            .mockup-grid {
+  display: flex;
+  flex-wrap: wrap;          /* 👈 IMPORTANT */
+  gap: 40px;
+  justify-content: center;
+  max-width: 1300px;        /* optional but recommended */
+  margin: 0 auto;           /* center container */
+}
+
+.mockup-grid img {
+  width: 280px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- HERO -->
+        <section class="hero">
+            <img src="Assets/qprep/degrees.png"
+                alt="QPrep web app dashboard showing exam paper filtering and question tagging interface">
+        </section>
+
+        <!-- HEADER -->
+        <section class="project-header">
+
+            <h1>QPrep</h1>
+            <p class="subtitle">A Smarter Way to Analyze Previous Year Question Papers</p>
+
+            <div class="nav-buttons">
+                <a href="#problem">Problem</a>
+                <a href="#research">Research</a>
+                <a href="#flow">User Flow</a>
+                <a href="#wireframes">Wireframes</a>
+                <a href="#high-ui">High-Fidelity UI</a>
+                <a href="#learned">Learnings</a>
+            </div>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>Where</span>
+                    <strong>Exam Preparation</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Platform</span>
+                    <strong>Web App</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Role</span>
+                    <strong>Solo UI/UX Designer</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Duration</span>
+                    <strong>2 Weeks</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Category</span>
+                    <strong>EdTech Utility</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Tool</span>
+                    <strong>Figma</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- WHY -->
+        <section id="research" class="highlight-section">
+            <h2>Why I Made This</h2>
+            <p>
+                During exam season, I observed that students spend more time searching for previous year question papers
+                than actually revising.
+                <br><br>
+                They often:
+            </p>
+            <ul>
+                <li>Visit multiple websites</li>
+                <li>Download scattered PDFs</li>
+                <li>Manually check repeated questions</li>
+                <li>Waste time identifying important patterns</li>
+            </ul>
+            <p>
+                This inspired me to design a centralized solution that saves time and reduces exam stress.
+            </p>
+        </section>
+
+        <!-- PROBLEM -->
+        <section id="problem" class="split-section">
+
+            <div>
+                <h2>The Problem</h2>
+                <p>
+                    Students lack a single organized platform to:
+                </p>
+                <ul>
+                    <li>Access all previous year question papers</li>
+                    <li>Identify frequently repeated questions</li>
+                    <li>Spot unique or tricky patterns</li>
+                    <li>Filter content efficiently</li>
+                </ul>
+
+                <h3 style="margin-top:24px;">Core Issues</h3>
+                <ul>
+                    <li>Scattered resources</li>
+                    <li>Manual analysis required</li>
+                    <li>No repetition tracking</li>
+                    <li>Time wasted before exams</li>
+                </ul>
+            </div>
+
+            <div>
+                <img src="Assets/qprep/exam.jpeg"
+                    alt="Student struggling with scattered exam preparation resources and multiple PDF documents">
+            </div>
+
+        </section>
+
+        <!-- DESIGN DIRECTION -->
+        <section class="highlight-section">
+            <h2>Design Direction</h2>
+            <ul>
+                <li>Centralized repository</li>
+                <li>Smart filtering system</li>
+                <li>Clear tagging for repeated questions</li>
+                <li>Minimal and distraction-free dashboard</li>
+            </ul>
+            <p style="margin-top:16px;">
+                Goal: Reduce cognitive load during high-pressure exam time.
+            </p>
+        </section>
+
+        <!-- USER FLOW -->
+        <section id="flow" class="flow">
+            <h2>USER FLOW</h2>
+            <img src="Assets/qprep/user flow qp.png"
+                alt="User flow diagram showing subject selection, filtering and viewing questions process">
+            <p style="margin-top:24px;text-align:center;font-weight:500;">
+                The flow was intentionally kept flat to minimize navigation depth and reduce friction.
+            </p>
+        </section>
+
+        <!-- INFORMATION ARCHITECTURE -->
+        <section class="ia">
+            <h2 style="font-family:'Poppins',sans-serif;margin-bottom:24px;">Information Architecture</h2>
+            Home
+            ├── Subjects
+            │ ├── Year-wise Papers
+            │ ├── Repeated Questions
+            │ └── Unique Questions
+            ├── Search
+            └── Saved Questions
+        </section>
+
+        <!-- WIREFRAMES -->
+        <section id="wireframes" class="media-section">
+            <h2>Wireframes</h2>
+            <img src="Assets/qprep/qp wireframes.png"
+                alt="Low fidelity grayscale wireframes of QPrep dashboard and filtering interface">
+        </section>
+
+        <!-- HIGH FIDELITY -->
+        <section class="hero">
+            <div class="mockup-grid">
+                <img src="Assets/qprep/1.png">
+                <img src="Assets/qprep/2.png">
+                <img src="Assets/qprep/3.png">
+                <img src="Assets/qprep/4.png">
+                <img src="Assets/qprep/5.png">
+                <img src="Assets/qprep/6.png">
+            </div>
+        </section>
+
+        <!-- KEY FEATURES -->
+        <section class="highlight-section">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Centralized question paper database</li>
+                <li>Smart repetition filter</li>
+                <li>Unique question identification</li>
+                <li>Subject-wise & year-wise categorization</li>
+                <li>Quick search functionality</li>
+            </ul>
+        </section>
+
+        <!-- CONSTRAINTS -->
+        <section class="highlight-section">
+            <h2>Constraints</h2>
+            <ul>
+                <li>2-week timeline</li>
+                <li>Solo designer</li>
+                <li>No backend data automation</li>
+                <li>Focused on UI & structure</li>
+            </ul>
+        </section>
+
+        <!-- LEARNINGS -->
+        <section id="learned">
+            <h2>What I Learned</h2>
+            <ul>
+                <li>Information hierarchy directly impacts efficiency</li>
+                <li>Filtering reduces cognitive load</li>
+                <li>Simplicity improves usability under stress</li>
+                <li>Utility apps must prioritize clarity over aesthetics</li>
+            </ul>
+        </section>
+
+        <!-- INTERVIEW SUMMARY -->
+        <section class="highlight-section">
+            <h2>Interview Summary</h2>
+            <p>
+                QPrep is a web-based exam preparation platform that helps students save time by organizing and filtering
+                previous year question papers intelligently, reducing manual effort during revision.
+            </p>
+        </section>
+
+    </body>
+
+</html>
